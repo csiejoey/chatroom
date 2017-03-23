@@ -3,54 +3,43 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 const express = require('express');
 
-var fs = require('fs');
+var usernames = {};
+var rooms = ['room1', 'room2'];
 
-app.use(express.static('image'));
-
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
-
-io.on('connection', function(socket){
-	socket.on('add user', function(msg){
-		socket.username = msg;
-		console.log("new user: " + msg + " logged in.");
-		io.emit('add user', {
-			username: socket.username
-		});
-	});
-});
-
-io.on('connection', function(socket){
-	socket.on('chat message', function(msg){
-		io.emit('chat message', {
-			username: socket.username,
-			usermsg: msg
-		});
-	});
-});
-
+// var fs = require('fs');
 var emoji = '<img src="diss.png">';
 var emoji2 = '<img src="smiley1.png">';
+app.use(express.static('image'));
 
-io.on('connection', function(socket){
+app.get('/', function(req, res) {
+	res.sendFile(__dirname + '/index.html');
+});
+
+io.sockets.on('connection', function(socket) {
+	socket.on('addroom1user', function(username) {
+		socket.username = username;
+		socket.room = 'room1';
+		usernames[username] = username;
+		socket.join('room1');
+		socket.emit('updaterooms', rooms, 'room1');
+	});
+
+	socket.on('addroom2user', function(username) {
+		socket.username = username;
+		socket.room = 'room2';
+		usernames[username] = username;
+		socket.join('room2');
+		socket.emit('updaterooms', rooms, 'room2');
+	});
+
+	socket.on('sendchat', function(data){
+		io.sockets.in(socket.room).emit('updatechat', socket.username, data);
+	});
+
 	socket.on('send pic', function(){
-		io.emit('send pic', {
-			username: socket.username,
-			useremoji: emoji
-		});
+		io.sockets.in(socket.room).emit('updatechat', socket.username, emoji)
 	});
 });
-
-io.on('connection', function(socket){
-	socket.on('send pic2', function(){
-		io.emit('send pic2', {
-			username: socket.username,
-			useremoji: emoji2
-		});
-	});
-});
-
 
 http.listen(3000, function(){
   console.log('listening on *:3000');
