@@ -33,6 +33,20 @@ io.sockets.on('connection', function(socket) {
 	});
 
 	socket.on('sendchat', function(data){
+		if (data === 'B-)') {
+			data = '<img src="glasses.gif">';
+		} else if (data === '=))') {
+			data = '<img src="lol.gif">';
+		} else if (data === ':-h') {
+			data = '<img src="bye.gif">';
+		} else if (data === ':-S') {
+			data = '<img src="worry.gif">';
+		} else if (data === '=D>') {
+			data = '<img src="applause.gif">';
+		} 
+		else if (data === 'https://www.youtube.com/watch?v=YnS0ROlloxA') {
+			data = '<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/YnS0ROlloxA?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>';
+		}
 		io.sockets.in(socket.room).emit('updatechat', socket.username, data);
 	});
 

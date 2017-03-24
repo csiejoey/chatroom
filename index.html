@@ -35,6 +35,7 @@
   <script>
   
     var socket = io.connect('http://localhost:3000');
+    // var socket = io.connect('34.208.238.5:3000');
 
     socket.on('connect', function() {
       if (prompt("pick a room: ") === "1"){
