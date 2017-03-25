@@ -7,12 +7,15 @@ var usernames = {};
 var rooms = ['room1', 'room2'];
 
 // var fs = require('fs');
-var emoji = '<img src="diss.png">';
-var emoji2 = '<img src="smiley1.png">';
 app.use(express.static('image'));
+app.use(express.static('css'));
 
 app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/login', function(req, res) {
+	res.sendFile(__dirname + '/login.html');
 });
 
 io.sockets.on('connection', function(socket) {
@@ -21,7 +24,6 @@ io.sockets.on('connection', function(socket) {
 		socket.room = 'room1';
 		usernames[username] = username;
 		socket.join('room1');
-		socket.emit('updaterooms', rooms, 'room1');
 	});
 
 	socket.on('addroom2user', function(username) {
@@ -29,7 +31,6 @@ io.sockets.on('connection', function(socket) {
 		socket.room = 'room2';
 		usernames[username] = username;
 		socket.join('room2');
-		socket.emit('updaterooms', rooms, 'room2');
 	});
 
 	socket.on('sendchat', function(data){
@@ -43,15 +44,12 @@ io.sockets.on('connection', function(socket) {
 			data = '<img src="worry.gif">';
 		} else if (data === '=D>') {
 			data = '<img src="applause.gif">';
-		} 
-		else if (data === 'https://www.youtube.com/watch?v=YnS0ROlloxA') {
-			data = '<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/YnS0ROlloxA?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>';
-		}
+		} else if (data.indexOf('http') > -1) {
+			data = '<a href="' + data + '">' + data + '</a>';
+		} else if (data === '叮咚，有人在家嗎～～～～') {
+			data = '<span style="color: red; font-weight: bold">叮咚，有人在家嗎～～～～</span>';
+		} // 字體顏色
 		io.sockets.in(socket.room).emit('updatechat', socket.username, data);
-	});
-
-	socket.on('send pic', function(){
-		io.sockets.in(socket.room).emit('updatechat', socket.username, emoji)
 	});
 });
 

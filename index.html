@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
+  <meta charset="utf-8" name = "viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Yahoo Live Messenger</title>
     <style>
       /** { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -14,28 +15,24 @@
     </style>
   </head>
   <body>
-  <div style="float:left;width:100px;border-right: 1px solid black;height: 300px;padding: 10px;overflow:scroll-y;">
+  <!-- <div style="float:left;width:100px;border-right: 1px solid black;height: 300px;padding: 10px;overflow:scroll-y;">
     <b>ROOMS</b>
     <div id="rooms"></div>
-  </div>
+  </div> -->
   <div style="float: left;width: 300px;height: 250px;overflow: scroll-y;padding: 10px;">
   <div id="conversation"></div>
   <input id="data" style="width: 200px" />
   <input type="button" id="datasend" value="send" />
-  <button id="picUp" onclick="sendPic();">嗆聲娃娃</button>
+  <button id="autumnLeaves">聊天情境</button>
+  <button id="dingdong">!!</button>
   </div>
-    <!-- <ul id="messages"></ul>
-    <button id="picUp" onclick="sendPic();">嗆聲娃娃</button>
-    <button id="picUp" onclick="sendPic2();">emoji</button>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form> -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <script>
   
     var socket = io.connect('http://localhost:3000');
     // var socket = io.connect('34.208.238.5:3000');
+    const leavesGif = '/autumnleaves.gif';
 
     socket.on('connect', function() {
       if (prompt("pick a room: ") === "1"){
@@ -49,38 +46,29 @@
       $('#conversation').append('<b>' + username + ':</b> ' + data + '<br>');
     });
 
-    socket.on('updaterooms', function (rooms, current_room) {
-      $('#rooms').empty();
-      $.each(rooms, function (key, value) { //key???
-        if (value == current_room) {
-          $('#rooms').append('<div>' + value + '</div>');
-        } else {
-          $('#rooms').append('<div><a href="#" onclick="switchRoom(\'' + value + '\')">' + value + '</a></div>');
-        }
-      });
-    })
-
-    function switchRoom(room) {
-      socket.emit('switchRoom', room);
-    }
-
     $(function () {
       $('#datasend').click(function() {
         var message = $('#data').val();
         $('#data').val('');
         socket.emit('sendchat', message);
+        $('#data').focus();
       });
 
       $('#data').keypress(function(e) {
         if (e.which == 13) {
           $(this).blur();
-          $('#datasend').focus().click();
+          $('#datasend').click();
         }
       });
 
-      sendPic = function(){
-      socket.emit('send pic');
-    }
+      $('#autumnLeaves').on('click', function() {
+        $('#conversation').css('background-image', 'url(' + leavesGif + ')');
+      });
+
+      $('#dingdong').on('click', function() {
+        socket.emit('sendchat', '叮咚，有人在家嗎～～～～');
+      });
+
     });
   </script>
   </body>
