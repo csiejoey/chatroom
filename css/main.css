@@ -1,0 +1,94 @@
+html body{
+	background-color: #E5E7E9;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Hiragino Sans GB';
+	/*cursor: default; must change all the cursors... */
+}
+#main{
+	height: 500px;
+	margin: 5% 3.5% 0;
+	overflow: scroll-y;
+	background-color: #FCFAF2;
+	border-radius: 15px 15px 0 0;
+}
+#topBar{
+	height: 30px;
+	border-radius: 15px 15px 0 0;
+	background-color: #70328F;
+	display: flex;
+	align-items: center;
+}
+.topBarIcon{
+	margin: 0 0 0 12px;
+	width: 18px;
+	height: 18px;
+}
+.topBarTitle{
+	margin: 0 0 0 11px;
+	color: white;
+}
+#topBarOptionsDiv{
+	margin-top: 2px;
+	position: absolute;
+	right: 5.8%;
+}
+.topBarOptions{
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+#optionsAndPic{
+	display: flex;
+}
+#chatOptionsDiv{
+	width: 80%;
+	height: 100%;
+}
+#preferenceDiv{
+	height: 25px;
+	margin: 2px 0 0 6px;
+}
+.preference{
+	display: inline-block;
+	text-align: center;
+	width: 40px;
+	font-size: 15px;
+	cursor: default;
+}
+.preference:hover{
+	box-shadow: 0 0 4px darkgrey;
+}
+#imageOptionsDiv{
+	display: flex;
+	padding: 7px;
+}
+.imageOptions{
+	height: 43px;
+}
+.statusType{
+	display: inline-block;
+	margin: 5px 3px 0 9px;
+	width: 13px;
+	height: 13px;
+	background-color: #FFC408;
+	border-radius: 50%;
+}
+.active{
+	background-color: #FFC408;
+}
+.busy{
+	background-color: #C73E3A;
+}
+.offline{
+	background-color: #BDC0BA;
+}
+#nameStatus{
+	font-size: 14px;
+}
+#opponentPic{
+	width: 90px;
+	height: 90px;
+	padding: 10px;
+}

@@ -1,19 +1,43 @@
-<!-- after entering account & password, route to another page, use pr to add the jumping emoticon (maybe svg?) and hide the incoming page -->
+<!-- after entering account & password, route to another page, use pr to add the jumping emoticon (maybe svg?) on #### friends.html #### and hide the incoming page -->
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8" name = "viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>Login</title>
 	<link rel="stylesheet" href="login.css" class="css">
-	<style>
-	</style>
+<!-- 	<style type="text/css">
+	/*@font-face{
+		font-family: 'huaKangLiSong';
+		src: url('LiSongPro.ttf')format('ttf');
+	}*/
+	</style> -->
 </head>
 <body> 
 	<div id="main">
 		<div id="topBar">
-			<img class="topBarOptions" src="hide.png">
-			<img class="topBarOptions" src="max.png">
-			<img class="topBarOptions" src="close.png">
+			<img class="topBarIcon" src="yahooicon.png">
+			<div class="topBarTitle">Yahoo!</div>
+			<div id="topBarOptionsDiv">
+				<img class="topBarOptions" src="hide.png">
+				<img class="topBarOptions" src="max.png">
+				<img class="topBarOptions" src="close.png">
+			</div>
+		</div>
+		<div id="login">
+			<div id="loginInputDiv">
+				<span class="labelTxt">登入帳號</span><br>
+				<input class="loginInput" type="text" name="account"><br>
+				<span class="labelTxt">登入密碼</span><br>
+				<input class="loginInput" type="password" name="password"><br>
+			</div>
+			<div id="loginCheckbox">
+				<input type="checkbox" name="rememberme">記住帳號及密碼<br>
+				<input type="checkbox" name="loginautomatically">開機後自動登入<br>
+				<input type="checkbox" name="invisiblemode">以隱藏模式登入<br>
+			</div>
+			<div id="loginBtn">
+				<div id="loginBtnTxt"><a href="/friends">登入</a></div>
+			</div>
 		</div>
 	</div>
 </body>

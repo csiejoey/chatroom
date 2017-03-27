@@ -3,24 +3,72 @@ html body{
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	font-family: 'Hiragino Sans GB';
 }
 #main{
-	margin: 15% 18% 15%;
-	height: 560px;
-	background-color: #FFFFFB;
+	margin: 8% 18% 15%;
+	height: 610px;
+	background-color: #FCFAF2;
 	border-radius: 15px 15px 0 0;
 }
 #topBar{
 	width: 100%;
-	height: 25px;
+	height: 30px;
 	border-radius: 15px 15px 0 0;
 	background-color: #70328F;
 	display: flex;
-	justify-content: flex-end;
+	align-items: center;
+}
+.topBarIcon{
+	margin: 0 0 0% 12px;
+	width: 18px;
+	height: 18px;
+}
+.topBarTitle{
+	margin: 0 0 0 11px;
+	color: white;
+}
+#topBarOptionsDiv{
+	margin-top: 2px;
+	position: absolute;
+	right: 20%;
 }
 .topBarOptions{
-	margin: 3%;
-	width: 10px;
-	height: 10px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
 }
-/*#70328F*/
+#login{
+	margin-top: 108%; 
+}
+#loginInputDiv{
+	margin-left: 22%;
+}
+.loginInput{
+	margin: 3% 22% 3% 0;
+}
+#loginCheckbox{
+	margin: 3% 20% 0%;
+}
+input[type="text"]:focus{
+	outline: 0;
+}
+input[type="password"]:focus{
+	outline: 0;
+}
+#loginBtn{
+	margin: 6% 34% 0 34%;
+	padding: 1%;
+	background-color: #70328F;
+	display: flex;
+	justify-content: center;
+	border-radius: 3px;
+}
+#loginBtn:hover{
+	cursor: pointer;
+	opacity: 0.7;
+}
+#loginBtnTxt a{
+	text-decoration: none;
+	color: white;
+}

@@ -1,75 +1,91 @@
 <!doctype html>
 <html>
-  <head>
-  <meta charset="utf-8" name = "viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<head>
+    <meta charset="utf-8" name = "viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Yahoo Live Messenger</title>
-    <style>
-      /** { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }*/
-    </style>
-  </head>
-  <body>
-  <!-- <div style="float:left;width:100px;border-right: 1px solid black;height: 300px;padding: 10px;overflow:scroll-y;">
-    <b>ROOMS</b>
-    <div id="rooms"></div>
-  </div> -->
-  <div style="float: left;width: 300px;height: 250px;overflow: scroll-y;padding: 10px;">
-  <div id="conversation"></div>
-  <input id="data" style="width: 200px" />
-  <input type="button" id="datasend" value="send" />
-  <button id="autumnLeaves">聊天情境</button>
-  <button id="dingdong">!!</button>
-  </div>
+    <link rel="stylesheet" href="main.css" class="css">
+    <script src="jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="topBar">
+            <img class="topBarIcon" src="yahooicon.png">
+            <div class="topBarTitle">就已(hjoey0607)</div>
+            <div id="topBarOptionsDiv">
+                <img class="topBarOptions" src="hide.png">
+                <img class="topBarOptions" src="max.png">
+                <img class="topBarOptions" src="close.png">
+            </div>
+        </div>
+        <div id="optionsAndPic">
+            <div id="chatOptionsDiv">
+                <div id="preferenceDiv">
+                    <div class="preference">訊息</div>
+                    <div class="preference">編輯</div>
+                    <div class="preference">檢視</div>
+                    <div class="preference">互動</div>
+                    <div class="preference">說明</div>
+                </div>
+                <div id="imageOptionsDiv">
+                    <img class="imageOptions" src="hide.png">
+                    <img class="imageOptions" src="hide.png">
+                    <img class="imageOptions" src="hide.png">
+                    <img class="imageOptions" src="hide.png">
+                    <img class="imageOptions" src="hide.png">
+                </div>
+                <div id="nameStatus"><div class="statusType active"></div><span id="opponentName"> 就已</span><span class="statusWord"> - 下輩子如果我還記得妳</span></div>
+            </div>
+            <img id="opponentPic" src="joey.jpg">
+        </div>
+        <div id="conversation"></div>
+        <button id="autumnLeaves">聊天情境</button>
+        <button id="dingdong">!!</button>
+        <input id="data" style="width: 200px" />
+        <input type="button" id="datasend" value="send" />
+    </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-  <script>
-  
-    var socket = io.connect('http://localhost:3000');
-    // var socket = io.connect('34.208.238.5:3000');
-    const leavesGif = '/autumnleaves.gif';
+    <script>
 
-    socket.on('connect', function() {
-      if (prompt("pick a room: ") === "1"){
-        socket.emit('addroom1user', prompt("enter your name: "));
-      } else {
-        socket.emit('addroom2user', prompt("enter your name: "));
-      }
-    });
+    // var socket = io.connect('http://localhost:3000');
+    // // var socket = io.connect('34.208.238.5:3000');
+    // const leavesGif = '/autumnleaves.gif';
 
-    socket.on('updatechat', function (username, data){
-      $('#conversation').append('<b>' + username + ':</b> ' + data + '<br>');
-    });
+    // socket.on('connect', function() {
+    //     if (prompt("pick a room: ") === "1"){
+    //         socket.emit('addroom1user', prompt("enter your name: "));
+    //     } else {
+    //         socket.emit('addroom2user', prompt("enter your name: "));
+    //     }
+    // });
 
-    $(function () {
-      $('#datasend').click(function() {
-        var message = $('#data').val();
-        $('#data').val('');
-        socket.emit('sendchat', message);
-        $('#data').focus();
-      });
+    // socket.on('updatechat', function (username, data){
+    //     $('#conversation').append('<b>' + username + ':</b> ' + data + '<br>');
+    // });
 
-      $('#data').keypress(function(e) {
-        if (e.which == 13) {
-          $(this).blur();
-          $('#datasend').click();
-        }
-      });
+    // $(function () {
+    //     $('#datasend').click(function() {
+    //         var message = $('#data').val();
+    //         $('#data').val('');
+    //         socket.emit('sendchat', message);
+    //         $('#data').focus();
+    //     });
 
-      $('#autumnLeaves').on('click', function() {
-        $('#conversation').css('background-image', 'url(' + leavesGif + ')');
-      });
+    //     $('#data').keypress(function(e) {
+    //         if (e.which == 13) {
+    //             $(this).blur();
+    //             $('#datasend').click();
+    //         }
+    //     });
 
-      $('#dingdong').on('click', function() {
-        socket.emit('sendchat', '叮咚，有人在家嗎～～～～');
-      });
+    //     $('#autumnLeaves').on('click', function() {
+    //         $('#conversation').css('background-image', 'url(' + leavesGif + ')');
+    //     });
 
-    });
-  </script>
-  </body>
+    //     $('#dingdong').on('click', function() {
+    //         socket.emit('sendchat', '叮咚，有人在家嗎～～～～');
+    //     });
+
+    // });
+</script>
+</body>
 </html>

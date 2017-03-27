@@ -9,6 +9,7 @@ var rooms = ['room1', 'room2'];
 // var fs = require('fs');
 app.use(express.static('image'));
 app.use(express.static('css'));
+app.use(express.static('js'));
 
 app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/index.html');
@@ -16,6 +17,10 @@ app.get('/', function(req, res) {
 
 app.get('/login', function(req, res) {
 	res.sendFile(__dirname + '/login.html');
+});
+
+app.get('/friends', function(req, res) {
+	res.sendFile(__dirname + '/friends.html');
 });
 
 io.sockets.on('connection', function(socket) {

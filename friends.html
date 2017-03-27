@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" name = "viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>Friends</title>
+	<link rel="stylesheet" href="friends.css" class="css">
+	<script src="jquery-3.1.1.min.js"></script>
+</head>
+<body> 
+	<div id="main">
+		<div id="topBar">
+			<img class="topBarIcon" src="yahooicon.png">
+			<div class="topBarTitle">Yahoo!</div>
+			<div id="topBarOptionsDiv">
+				<img class="topBarOptions" src="hide.png">
+				<img class="topBarOptions" src="max.png">
+				<img class="topBarOptions" src="close.png">
+			</div>
+		</div>
+		
+		<div id="profile">
+			<img id="hooPic" src="smallhoo.jpg">
+			<div id="selfDescription">
+				<div id="nameStatus"><div class="statusType active"></div><span> 蔡小虎 &#9662</span></div>
+				<div class="statusContainer"><input class="statusInput" type="text" size="18" placeholder="你在做什麼？"></div>
+				<div>
+					<img class="statusOptions" src="hide.png">
+					<img class="statusOptions" src="hide.png">
+					<img class="statusOptions" src="max.png">
+					<img class="statusOptions" src="close.png">
+				</div>
+			</div>
+		</div>
+
+		<div id="friendlistDiv">
+			<div id="searchBar">
+				<input class="search" type="text" placeholder="請輸入帳號、姓名、暱稱、或電話號碼" size="32">
+				<img class="address" src="hide.png">
+			</div>
+			<div id="friendlist">
+				<span class="triangle">&#9662</span><span class="category"> ╭ &#9734; 好友 &#9734; ╮ (2/3)</span><br>
+				<div class="aFriend">
+					<img class="friendPic" src="hide.png">
+					<div class="friendStatus">
+						<div class="statusType"></div><span class="friendName"> 賴金毛</span><br>
+						<span class="statusWord blueLink">文+1</span>
+					</div>
+				</div>
+				<div class="aFriend">
+					<img class="friendPic" src="joey.jpg">
+					<div class="friendStatus">
+						<div class="statusType"></div><span class="friendName"> 就已</span><br>
+						<span class="statusWord">下輩子如果我還記得妳</span>
+					</div>
+				</div>
+				<div class="aFriend">
+					<img class="friendPic" src="hide.png">
+					<div class="friendStatus">
+						<div class="statusType busy"></div><span class="friendName"> 劉忻怡&#9732;</span><br>
+						<span class="statusWord blueLink">劇情的酸甜，我們一起寫～</span>
+					</div>
+				</div>
+				<span class="triangle">&#9662</span><span class="category"> ╭ &#9734; 同學 &#9734; ╮ (1/3)</span><br>
+				<div class="aFriend">
+					<img class="friendPic" src="hide.png">
+					<div class="friendStatus">
+						<div class="statusType offline"></div><span class="friendName"> 璽文</span><br>
+						<span class="statusWord"></span>
+					</div>
+				</div>
+				<div class="aFriend">
+					<img class="friendPic" src="hide.png">
+					<div class="friendStatus">
+						<div class="statusType active"></div><span class="friendName"> 廖</span><br>
+						<span class="statusWord blueLink">夏雨冬山</span>
+					</div>
+				</div>
+				<div class="aFriend">
+					<img class="friendPic" src="hide.png">
+					<div class="friendStatus">
+						<div class="statusType busy"></div><span class="friendName"> 貢丸 &#9741</span><br>
+						<span class="statusWord blueLink">41% 環嵌</span>
+					</div>
+				</div>
+				<span class="triangle">&#9662</span><span class="category"> ╭ &#9734; 其他 &#9734; ╮ (0/2)</span><br>
+				<div class="aFriend">
+					<img class="friendPic" src="hide.png">
+					<div class="friendStatus">
+						<div class="statusType offline"></div><span class="friendName"> 雅君</span><br>
+						<span class="statusWord offlineTxt">pieces of my heart</span>
+					</div>
+				</div>
+				<div class="aFriend">
+					<img class="friendPic" src="hide.png">
+					<div class="friendStatus">
+						<div class="statusType offline"></div><span class="friendName"> 老趙</span><br>
+						<span class="statusWord offlineTxt"><i>等候對方接受邀請</i></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+
+		$('.statusContainer').on('click', 'input', function(){ 
+			$(this).addClass('addBg');
+		});
+
+		$('.statusContainer').on('keyup', 'input', function (e) {
+			if (e.which === 13) {
+				$(this).removeClass('addBg');
+				$(this).blur();
+			}
+		});
+
+	});
+	</script>
+</body>
+</html>

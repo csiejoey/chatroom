@@ -1,0 +1,138 @@
+html body{
+	background-color: #E5E7E9;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Hiragino Sans GB';
+}
+#main{
+	margin: 3% 18% 0;
+	height: 640px;
+	background-color: #FCFAF2;
+	border-radius: 15px 15px 0 0;
+}
+#topBar{
+	width: 100%;
+	height: 30px;
+	border-radius: 15px 15px 0 0;
+	background-color: #70328F;
+	display: flex;
+	align-items: center;
+}
+.topBarIcon{
+	margin: 0 0 0% 12px;
+	width: 18px;
+	height: 18px;
+}
+.topBarTitle{
+	margin: 0 0 0 11px;
+	color: white;
+}
+#topBarOptionsDiv{
+	margin-top: 2px;
+	position: absolute;
+	right: 20%;
+}
+.topBarOptions{
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+#profile{
+	display: flex;
+}
+#hooPic{
+	padding: 15px 15px 5px 15px;
+	width: 90px;
+	height: 90px;
+}
+#selfDescription{
+	padding: 16px 0 0 3px;
+	font-size: 15px;
+}
+#nameStatus{
+	cursor: pointer;
+	padding: 0 5px 0 5px;
+}
+#nameStatus:hover{
+	box-shadow: 0 0 2px darkgrey;
+}
+.statusType{
+	display: inline-block;
+	margin-right: 3px;
+	width: 13px;
+	height: 13px;
+	background-color: #FFC408;
+	border-radius: 50%;
+}
+.active{
+	background-color: #FFC408;
+}
+.busy{
+	background-color: #C73E3A;
+}
+.offline{
+	background-color: #BDC0BA;
+}
+.statusContainer input{
+	outline: 0;
+}
+.addBg{
+	background-color: #FCFAF2;
+}
+.statusOptions{
+	margin: 10px 0 0 0;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+#searchBar{
+	background-color: #B481BB;
+	padding: 3px 3px 5px 14px;
+}
+.search{
+	outline: 0;
+}
+.address{
+	width: 15px;
+	height: 15px;
+}
+#friendlistDiv{
+	margin: 5px 0 0px 0;
+	height: 500px;
+	background-color: white;
+}
+#friendlist{
+	margin: 5px 0 0 0;
+}
+.triangle{
+	margin: 2px 0 2px 13px;
+	font-size: 13px;
+}
+.category{
+	margin: 2px 0 0 0;
+	font-size: 13px;
+	color: #939650;
+}
+.aFriend{
+	display: flex;
+}
+.friendPic{
+	margin: 1px 4px 0 9px;
+	width: 35px;
+	height: 35px;
+}
+.friendStatus{
+	margin: 1px 0 0 4px;
+	font-size: 10px;
+}
+.statusWord{
+	margin-left: 19px
+}
+.blueLink{
+	color: blue;
+	cursor: pointer;
+}
+.offlineTxt{
+	color: grey;
+}
