@@ -1,0 +1,106 @@
+html body{
+	background-color: #E5E7E9;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Hiragino Sans GB';
+}
+#main{
+	margin: 5% 5% 10%;
+	height: 610px;
+	background-color: #FCFAF2;
+	border-radius: 15px 15px 0 0;
+}
+#topBar{
+	width: 100%;
+	height: 30px;
+	border-radius: 15px 15px 0 0;
+	background-color: #70328F;
+	display: flex;
+	align-items: center;
+}
+.topBarIcon{
+	margin: 0 0 0 12px;
+	width: 18px;
+	height: 18px;
+}
+.topBarTitle{
+	margin: 0 0 0 11px;
+	color: white;
+}
+#topBarOptionsDiv{
+	margin-top: 2px;
+	position: absolute;
+	right: 8%;
+}
+.topBarOptions{
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+/*#############options##############*/
+#msgOptionsDiv{
+	display: flex;
+	height: 70px;
+}
+#msgOptions{
+	display: flex;
+	height: 40px;
+	margin: 15px 0 0 7px;
+}
+.options{
+	margin: 0 0 0 15px;
+	padding: 8px;
+	background-color: #E5E7E9;
+}
+#searchBarDiv{
+	position: absolute;
+	display: flex;
+	height: 40px;
+	border: 1px lightgrey solid;
+	margin: 15px 0 0 0;
+	right: 7%;
+}
+#searchBar{
+	width: 120px;
+	height: 100%;
+}
+#magnifier{
+	height: 40px;
+}
+#searchBtn{
+	width: 40px;
+	padding: 8px;
+	background-color: #E5E7E9;
+}
+/*###########table##############*/
+#friendmsg{
+	background-color: white;
+	margin: 0 5px 0;
+	padding: 8px 0 0 0;
+}
+.tableHead{
+	display: flex;
+	padding-left: 15px;
+}
+.tableFriend{
+	width: 25%;
+}
+.bigSymbol{
+	font-size: 20px;
+}
+.tableTitle{
+	width: 40%;
+}
+.tableDate{
+	width: 30%;
+}
+.blueBg{
+	background-color: #4E4F97;
+	color: white;
+}
+#prevmsgDiv{
+	background-color: white;
+	margin: 10px 5px 0;
+	height: 300px;
+}

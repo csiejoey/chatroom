@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" name = "viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>History</title>
+	<link rel="stylesheet" href="history.css" class="css">
+	<script src="jquery-3.1.1.min.js"></script>
+</head>
+<body> 
+	<div id="main">
+		<div id="topBar">
+			<img class="topBarIcon" src="yahooicon.png">
+			<div class="topBarTitle">歷史訊息</div>
+			<div id="topBarOptionsDiv">
+				<img class="topBarOptions" src="hide.png">
+				<img class="topBarOptions" src="max.png">
+				<img class="topBarOptions" src="close.png">
+			</div>
+		</div>
+
+		<div id="msgOptionsDiv">
+			<div id="msgOptions">
+				<div class="options">回覆 &#9662</div>
+				<div class="options">操作指令 &#9662</div>
+				<div class="options">全部查看 &#9662</div>
+			</div>
+			<div id="searchBarDiv">
+				<div id="searchBar"><img id="magnifier" src="hide.png"></div>
+				<div id="searchBtn">搜尋</div>
+			</div>
+		</div>
+		
+		<div id="friendmsg">
+			<div class="tableHead">
+				<div class="tableFriend"><span class="bigSymbol">&#9744;</span> 朋友</div>
+				<div class="tableTitle">主題</div>
+				<div class="tableDate">日期</div>
+			</div>
+			<div class="tableHead">
+				<div class="tableFriend"><span class="bigSymbol">&#9744;</span> 就已</div>
+				<div class="tableTitle">主題</div>
+				<div class="tableDate">日期</div>
+			</div>
+			<div class="tableHead">
+				<div class="tableFriend"><span class="bigSymbol">&#9744;</span> 璽文</div>
+				<div class="tableTitle">主題</div>
+				<div class="tableDate">日期</div>
+			</div>
+			<div id="yahMsg" class="tableHead">
+				<div class="tableFriend"><span class="bigSymbol" id="ballot">&#9744;</span> 雅君</div>
+				<div class="tableTitle">主題</div>
+				<div class="tableDate">日期</div>
+			</div>
+		</div>
+
+		<div id="prevmsgDiv">
+			<div id="prevmsg">
+				<div class="tableHead">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('#yahMsg').on('click', function() {
+			$(this).addClass('blueBg');
+			$('#ballot').html('&#9745;');
+		})
+	</script>
+</body>
+</html>

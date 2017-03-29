@@ -10,7 +10,7 @@
     <div id="main">
         <div id="topBar">
             <img class="topBarIcon" src="yahooicon.png">
-            <div class="topBarTitle">就已(hjoey0607)</div>
+            <div id="topBarTitle"></div>
             <div id="topBarOptionsDiv">
                 <img class="topBarOptions" src="hide.png">
                 <img class="topBarOptions" src="max.png">
@@ -33,59 +33,117 @@
                     <img class="imageOptions" src="hide.png">
                     <img class="imageOptions" src="hide.png">
                 </div>
-                <div id="nameStatus"><div class="statusType active"></div><span id="opponentName"> 就已</span><span class="statusWord"> - 下輩子如果我還記得妳</span></div>
+                <div id="nameStatus"><div class="statusType"></div><span id="opponentName"></span><span class="statusWord"></span></div>
             </div>
-            <img id="opponentPic" src="joey.jpg">
+            <!-- <img id="opponentPic" src="joey.jpg"> -->
         </div>
-        <div id="conversation"></div>
-        <button id="autumnLeaves">聊天情境</button>
-        <button id="dingdong">!!</button>
-        <input id="data" style="width: 200px" />
-        <input type="button" id="datasend" value="send" />
+
+<!--##################conversation#################### -->
+
+        <div id="conversationDiv">
+            <div id="prevChat"><span id="prevTxt">顯示最近交談內容</span></div>
+            <div id="offlineNotice"><!-- <span class="greyNotice">目前為離線狀態，暫時無法立即回覆您，請您留言給他。</span> --></div>
+            <div id="conversation"></div>
+        </div>
+
+<!-- ######################input####################### -->
+        <div>
+            <div id="inputOptionsDiv">
+                <img class="inputOptions" src="hide.png">
+                <img class="inputOptions" src="hide.png">
+                <img class="inputOptions" src="hide.png">
+                <img id="ring" class="inputOptions" src="hide.png">
+                <img id="leaves" class="inputOptions" src="hide.png">
+            </div>
+            <div id="inputTxtDiv">
+                <input id="data" />
+                <input type="button" id="datasend" value="傳送" />
+            </div>
+        </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script>
 
-    // var socket = io.connect('http://localhost:3000');
-    // // var socket = io.connect('34.208.238.5:3000');
-    // const leavesGif = '/autumnleaves.gif';
+    var socket = io.connect('http://localhost:3000');
+    // var socket = io.connect('34.208.238.5:3000');
+    const leavesGif = '/autumnleaves.gif';
 
-    // socket.on('connect', function() {
-    //     if (prompt("pick a room: ") === "1"){
-    //         socket.emit('addroom1user', prompt("enter your name: "));
-    //     } else {
-    //         socket.emit('addroom2user', prompt("enter your name: "));
-    //     }
-    // });
+    socket.on('connect', function() {
+        if (prompt("pick a room: ") === "1"){
+            socket.emit('addroom1user', prompt("enter your name: "));
+        } else {
+            socket.emit('addroom2user', prompt("enter your name: "));
+        }
+    });
 
-    // socket.on('updatechat', function (username, data){
-    //     $('#conversation').append('<b>' + username + ':</b> ' + data + '<br>');
-    // });
+    socket.on('setaccount', function(accountName) {
+        $('#topBarTitle').append('<span>' + accountName + '</span>');
+    });
 
-    // $(function () {
-    //     $('#datasend').click(function() {
-    //         var message = $('#data').val();
-    //         $('#data').val('');
-    //         socket.emit('sendchat', message);
-    //         $('#data').focus();
-    //     });
+    socket.on('setpic', function(profilePic) {
+        $('#optionsAndPic').append(profilePic);
+    });
 
-    //     $('#data').keypress(function(e) {
-    //         if (e.which == 13) {
-    //             $(this).blur();
-    //             $('#datasend').click();
-    //         }
-    //     });
+    socket.on('changestatus', function(type, name, word, blueOrNot) {
+        $('.statusType').attr('class', 'statusType').addClass(type);
+        $('#opponentName').text(' ' + name + ' - ');
+        if (blueOrNot === 'blue') {
+            $('.statusWord').addClass('blueLink');
+        } else {
+            $('.statusWord').attr('class', 'statusWord');
+        }
+        $('.statusWord').text(word);
+    });
 
-    //     $('#autumnLeaves').on('click', function() {
-    //         $('#conversation').css('background-image', 'url(' + leavesGif + ')');
-    //     });
+    socket.on('setofflinetxt', function(userAccount) {
+        $('#offlineNotice').append('<span class="greyNotice"> ' + userAccount + ' 目前為離線狀態，暫時無法立即回覆您，請您留言給他。</span>')
+    });
 
-    //     $('#dingdong').on('click', function() {
-    //         socket.emit('sendchat', '叮咚，有人在家嗎～～～～');
-    //     });
+    socket.on('updatechat', function (username, data){
+        let colorName;
+        if (username === '小虎') {
+            colorName = '<b><span class="blueName">' + username + ': </span></b>';
+            colorTxt = '<span class="hooColorTxt">' + data + '</span>';
+        } else if (username === '雅君') {
+            colorName = '<b><span class="greyName">' + username + ': </span></b>';
+            colorTxt = '<span class="yahColorTxt">' + data + '</span>';
+        } else {
+            colorName = '<b><span class="greyName">' + username + ': </span></b>';
+            colorTxt = '<span>' + data + '</span>';
+        }
+        $('#conversation').append(colorName + colorTxt + '<br>');
+        let elem = document.getElementById('conversationDiv');
+        elem.scrollTop = elem.scrollHeight;
+    });
 
-    // });
+    $(function () {
+        $('#datasend').click(function() {
+            var message = $('#data').val();
+            $('#data').val('');
+            socket.emit('sendchat', message);
+            $('#data').focus();
+        });
+
+        $('#data').keypress(function(e) {
+            if (e.which == 13) {
+                // $(this).blur();
+                // $('#datasend').click();
+                var message = $(this).val();
+                $('#data').val('');
+                socket.emit('sendchat', message);
+                $('#data').focus();
+            }
+        });
+
+        $('#ring').on('click', function() {
+            socket.emit('sendchat', '叮咚，有人在家嗎～～～～');
+        });
+
+        $('#leaves').on('click', function() {
+            $('#conversation').css('background-image', 'url(' + leavesGif + ')');
+        });
+
+    });
 </script>
 </body>
 </html>

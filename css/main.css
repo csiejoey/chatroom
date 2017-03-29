@@ -7,12 +7,15 @@ html body{
 	/*cursor: default; must change all the cursors... */
 }
 #main{
-	height: 500px;
+	height: 560px;
 	margin: 5% 3.5% 0;
 	overflow: scroll-y;
 	background-color: #FCFAF2;
 	border-radius: 15px 15px 0 0;
 }
+
+/*topBar------------------------*/
+
 #topBar{
 	height: 30px;
 	border-radius: 15px 15px 0 0;
@@ -25,7 +28,7 @@ html body{
 	width: 18px;
 	height: 18px;
 }
-.topBarTitle{
+#topBarTitle{
 	margin: 0 0 0 11px;
 	color: white;
 }
@@ -39,6 +42,9 @@ html body{
 	height: 15px;
 	cursor: pointer;
 }
+
+/*optionsAndPic------------------------*/
+
 #optionsAndPic{
 	display: flex;
 }
@@ -87,8 +93,90 @@ html body{
 #nameStatus{
 	font-size: 14px;
 }
+.blueLink{
+	color: blue;
+	cursor: pointer;
+}
 #opponentPic{
 	width: 90px;
 	height: 90px;
 	padding: 10px;
+}
+
+/*---------conversation---------------*/
+
+#conversationDiv{
+	border: 1px lightgrey solid;
+	background-color: white;
+	margin: 0 5px 0;
+	height: 310px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#prevChat{
+	width: 100%;
+	height: 20px;
+	padding: 2px 0 2px 5px;
+	background-color: #E5E7E9;
+	font-size: 12px;
+}
+#prevTxt{
+	cursor: pointer;
+	color: #005CAF;
+}
+#offlineNotice{
+	background-color: #FFFFFB;
+	border-bottom: 1px lightgrey solid;
+}
+.greyNotice{
+	font-size: 10px;
+	color: #91989F;
+	padding: 0 0 0 8px;
+}
+#conversation{
+	padding: 4px 0 0 8px;
+}
+.blueName{
+	color: #005CAF;
+}
+.greyName{
+	color: #91989F;
+}
+
+/*-----------input-------------*/
+#inputOptionsDiv{
+	display: flex;
+	margin: 6px 0 3px 6px;
+	height: 28px;
+}
+.inputOptions{
+	width: 28px;
+	height: 28px;
+}
+#inputTxtDiv{
+	display: flex;
+	height: 100%;
+	margin: 6px;
+}
+#data{
+	outline: 0;
+	height: 56px;
+	width: 87%;
+}
+#datasend{
+	width: 70px;
+    border: none;
+    border-radius: 0 3px 3px 0;
+}
+.hooColorTxt{
+	font-size: 18px;
+	background: -webkit-linear-gradient(#eee, #7B90D2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.yahColorTxt{
+	font-size: 18px;
+	background: -webkit-linear-gradient(#F8C3CD, #D05A6E);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
