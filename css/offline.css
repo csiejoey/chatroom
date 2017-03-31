@@ -7,7 +7,7 @@ html body{
 }
 #main{
 	margin: 5% 0 0;
-	height: 515px;
+	height: 250px;
 	background-color: #FCFAF2;
 	border-radius: 15px 15px 0 0;
 }
@@ -31,71 +31,37 @@ html body{
 #topBarOptionsDiv{
 	margin-top: 2px;
 	position: absolute;
-	right: 8%;
+	right: 2%;
 }
 .topBarOptions{
 	width: 15px;
 	height: 15px;
 	cursor: pointer;
 }
-/*#############options##############*/
-#msgOptionsDiv{
-	display: flex;
-	height: 70px;
-}
-#msgOptions{
-	display: flex;
-	height: 40px;
-	margin: 15px 0 0 7px;
-}
-.options{
-	margin: 0 0 0 15px;
-	padding: 8px;
-	background-color: #E5E7E9;
-}
-#searchBarDiv{
-	position: absolute;
-	display: flex;
-	height: 40px;
-	border: 1px #E5E7E9 solid;
-	margin: 15px 0 0 0;
-	right: 7%;
-}
-#searchBar{
-	width: 120px;
-	height: 100%;
-}
-#magnifier{
-	height: 40px;
-}
-#searchBtn{
-	width: 40px;
-	padding: 8px;
-	background-color: #E5E7E9;
-}
 /*###########table##############*/
 #friendmsg{
 	background-color: white;
 	margin: 0 5px 0;
-	padding: 8px 0 0 0;
-	font-size: 15px;
+	padding: 8px 0 0 5px;
+}
+#tableHead{
+	background-color: #E5E7E9;
 }
 .tableHead{
 	display: flex;
 	padding-left: 15px;
-	align-items: center;
 }
 .tableFriend{
-	width: 25%;
-}
-.bigSymbol{
-	font-size: 20px;
+	width: 15%;
 }
 .tableTitle{
-	width: 40%;
+	width: 30%;
 }
 .tableDate{
 	width: 30%;
+}
+.tableReceiver{
+	width: 15%;
 }
 .blueBg{
 	background-color: #4E4F97;
@@ -105,7 +71,8 @@ html body{
 #prevmsgDiv{
 	background-color: white;
 	margin: 10px 5px 0;
-	/*height: 300px;*/
+	/*border: 1px lightgrey solid;*/
+	height: 100px;
 }
 .prevmsg{
 	padding: 5px 0 5px 19px;
@@ -127,5 +94,25 @@ html body{
 }
 .blueLink{
 	color: blue;
+	cursor: pointer;
+}
+/*###############bottom options################*/
+#bottomOptionsDiv{
+	display: flex;
+	margin: 5px 5px 2px;
+}
+#leftOptionsDiv{
+	display: flex;
+}
+#rightOptionsDiv{
+	position: absolute;
+	display: flex;
+	right: 7%;
+}
+.options{
+	margin: 0 7px 0;
+	padding: 8px;
+	background-color: #E5E7E9;
+	border-radius: 3px;
 	cursor: pointer;
 }

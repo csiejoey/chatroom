@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" name = "viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>offline message</title>
+	<link rel="stylesheet" href="offline.css" class="css">
+	<script src="jquery-3.1.1.min.js"></script>
+</head>
+<body> 
+	<div id="main">
+		<div id="topBar">
+			<img class="topBarIcon" src="mainvision.png">
+			<div class="topBarTitle">離線留言</div>
+			<div id="topBarOptionsDiv">
+				<img class="topBarOptions" src="hide.png">
+				<img class="topBarOptions" src="max.png">
+				<img class="topBarOptions" src="close.png">
+			</div>
+		</div>
+		
+		<div id="friendmsg">
+			<div class="tableHead" id="tableHead">
+				<div class="tableFriend">留言人</div>
+				<div class="tableTitle">留言內容</div>
+				<div class="tableDate">接收日期</div>
+				<div class="tableReceiver">留言對象</div>
+			</div>
+			<div class="tableHead" id="joeyMsg">
+				<div class="tableFriend">就已</div>
+				<div class="tableTitle">她帳號: cuteyah38...</div>
+				<div class="tableDate">2009年四月三日...</div>
+				<div class="tableReceiver">smallhoo666</div>
+			</div>
+		</div>
+
+		<div id="prevmsgDiv">
+			<div class="prevmsg">
+				就已 <span class="greyDate">(09/03/25 下午 23:30:17)</span> ：她帳號: cuteyah38...<br>
+				就已 <span class="greyDate">(09/03/25 下午 23:30:25)</span> ：有好消息再跟我說！<br>
+			</div>
+		</div>
+
+		<div id="bottomOptionsDiv">
+			<div id="leftOptionsDiv">
+				<div class="leftOptions options">加入朋友</div>
+				<div class="leftOptions options">忽略</div>
+				<div class="leftOptions options">刪除</div>
+			</div>
+			<div id="rightOptionsDiv">
+				<div class="rightOptions options">回覆</div>
+				<div class="rightOptions options">關閉</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('#joeyMsg').on('click', function() {
+			$(this).addClass('blueBg');
+			$('.prevmsg').addClass('showTxt');
+		});
+	</script>
+</body>
+</html>

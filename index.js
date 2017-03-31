@@ -27,6 +27,10 @@ app.get('/history', function(req, res) {
 	res.sendFile(__dirname + '/history.html');
 });
 
+app.get('/offline', function(req, res) {
+	res.sendFile(__dirname + '/offline.html');
+});
+
 io.sockets.on('connection', function(socket) {
 	socket.on('addroom1user', function(username) {
 		socket.username = username;

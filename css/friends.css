@@ -81,21 +81,23 @@ html body{
 	background-color: #FCFAF2;
 }
 .statusOptions{
-	margin: 10px 0 0 0;
+	margin: 10px 0 0 1px;
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
 }
 #searchBar{
+	display: flex;
 	background-color: #B481BB;
-	padding: 3px 3px 5px 14px;
+	padding: 3px 3px 3px 14px;
+	align-items: center;
 }
 .search{
 	outline: 0;
 }
 .address{
-	width: 15px;
-	height: 15px;
+	width: 25px;
+	height: 25px;
 }
 #friendlistDiv{
 	margin: 5px 0 0px 0;

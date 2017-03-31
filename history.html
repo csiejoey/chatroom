@@ -9,7 +9,7 @@
 <body> 
 	<div id="main">
 		<div id="topBar">
-			<img class="topBarIcon" src="yahooicon.png">
+			<img class="topBarIcon" src="mainvision.png">
 			<div class="topBarTitle">歷史訊息</div>
 			<div id="topBarOptionsDiv">
 				<img class="topBarOptions" src="hide.png">
@@ -25,7 +25,7 @@
 				<div class="options">全部查看 &#9662</div>
 			</div>
 			<div id="searchBarDiv">
-				<div id="searchBar"><img id="magnifier" src="hide.png"></div>
+				<div id="searchBar"><img id="magnifier" src="search.png"></div>
 				<div id="searchBtn">搜尋</div>
 			</div>
 		</div>
@@ -38,33 +38,46 @@
 			</div>
 			<div class="tableHead">
 				<div class="tableFriend"><span class="bigSymbol">&#9744;</span> 就已</div>
-				<div class="tableTitle">主題</div>
-				<div class="tableDate">日期</div>
+				<div class="tableTitle">女生無名連結</div>
+				<div class="tableDate">09/04/03 下午 23:18:34</div>
 			</div>
 			<div class="tableHead">
 				<div class="tableFriend"><span class="bigSymbol">&#9744;</span> 璽文</div>
-				<div class="tableTitle">主題</div>
-				<div class="tableDate">日期</div>
+				<div class="tableTitle">第三題怎麼解啊？？</div>
+				<div class="tableDate">09/04/04 下午 20:48:32</div>
 			</div>
 			<div id="yahMsg" class="tableHead">
 				<div class="tableFriend"><span class="bigSymbol" id="ballot">&#9744;</span> 雅君</div>
-				<div class="tableTitle">主題</div>
-				<div class="tableDate">日期</div>
+				<div class="tableTitle">晚安</div>
+				<div class="tableDate">09/04/03 下午 23:15:08</div>
 			</div>
 		</div>
 
 		<div id="prevmsgDiv">
-			<div id="prevmsg">
-				<div class="tableHead">
-				</div>
+			<div id="friendYah">
+				<b>朋友：<span class="yahName">雅君</span></b>
+			</div>
+			<div class="prevmsg">
+				小虎 <span class="greyDate">(09/04/03 下午 23:15:08)</span> ：晚安<br>
+				雅君 <span class="greyDate">(09/04/03 下午 23:15:15)</span> ：晚安～<br>
+				小虎 <span class="greyDate">(09/04/03 下午 23:17:33)</span> ：<span class="blueLink">www.wretch.cc/blog/cuteyah38/album</span><br>
+				雅君 <span class="greyDate">(09/04/03 下午 23:19:24)</span> ：？？幹嘛傳我的相簿<br>
+				小虎 <span class="greyDate">(09/04/03 下午 23:22:07)</span> ：喔沒啦<br>
+				小虎 <span class="greyDate">(09/04/03 下午 23:22:19)</span> ：想問你第一張照片的衣服哪裡買的<br>
+				小虎 <span class="greyDate">(09/04/03 下午 23:22:28)</span> ：想買給我妹當生日禮物<br>
+				雅君 <span class="greyDate">(09/04/03 下午 23:23:00)</span> ：在公館買的 你對妹妹好好喔<br>
+				小虎 <span class="greyDate">(09/04/03 下午 23:23:11)</span> ：我對妳也很好好不好~<br>
 			</div>
 		</div>
 	</div>
 	<script type="text/javascript">
+		
 		$('#yahMsg').on('click', function() {
 			$(this).addClass('blueBg');
 			$('#ballot').html('&#9745;');
-		})
+			$('.yahName').addClass('showTxt');
+			$('.prevmsg').addClass('showTxt');
+		});
 	</script>
 </body>
 </html>
