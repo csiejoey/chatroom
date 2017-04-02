@@ -35,7 +35,7 @@ html body{
 #topBarOptionsDiv{
 	margin-top: 2px;
 	position: absolute;
-	right: 5.8%;
+	right: 10px;
 }
 .topBarOptions{
 	width: 15px;
@@ -148,6 +148,7 @@ html body{
 	display: flex;
 	margin: 6px 0 3px 6px;
 	height: 28px;
+	cursor: pointer;
 }
 .inputOptions{
 	width: 28px;
@@ -170,13 +171,16 @@ html body{
 }
 .hooColorTxt{
 	font-size: 18px;
-	background: -webkit-linear-gradient(#eee, #7B90D2);
+	background: -webkit-linear-gradient(#7B90D2, #5B77C7);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 .yahColorTxt{
 	font-size: 18px;
-	background: -webkit-linear-gradient(#F8C3CD, #D05A6E);
+	background: -webkit-linear-gradient(#D05A6E, #C34661);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+/*#dingDongRed{
+	color: red;
+}*/

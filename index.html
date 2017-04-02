@@ -86,13 +86,17 @@
 
     socket.on('changestatus', function(type, name, word, blueOrNot) {
         $('.statusType').attr('class', 'statusType').addClass(type);
-        $('#opponentName').text(' ' + name + ' - ');
-        if (blueOrNot === 'blue') {
-            $('.statusWord').addClass('blueLink');
+        if(name === null) {
+            return;
         } else {
-            $('.statusWord').attr('class', 'statusWord');
+            $('#opponentName').text(' ' + name + ' - ');
+            if (blueOrNot === 'blue') {
+                $('.statusWord').addClass('blueLink');
+            } else {
+                $('.statusWord').attr('class', 'statusWord');
+            }
+            $('.statusWord').text(word);
         }
-        $('.statusWord').text(word);
     });
 
     socket.on('setofflinetxt', function(userAccount) {
@@ -103,10 +107,18 @@
         let colorName;
         if (username === '小虎') {
             colorName = '<b><span class="blueName">' + username + ': </span></b>';
-            colorTxt = '<span class="hooColorTxt">' + data + '</span>';
-        } else if (username === '雅君') {
+            if (data === '<span style="color: red; font-weight: bold">叮咚，有人在家嗎～～～～</span>') {
+                colorTxt = data;
+            } else {
+                colorTxt = '<span class="hooColorTxt">' + data + '</span>';
+            }
+        } else if (username === '雅君' && data !== '叮咚，有人在家嗎～～～～') {
             colorName = '<b><span class="greyName">' + username + ': </span></b>';
-            colorTxt = '<span class="yahColorTxt">' + data + '</span>';
+            if (data === '<span style="color: red; font-weight: bold">叮咚，有人在家嗎～～～～</span>') {
+                colorTxt = data;
+            } else {
+                colorTxt = '<span class="yahColorTxt">' + data + '</span>';
+            }
         } else {
             colorName = '<b><span class="greyName">' + username + ': </span></b>';
             colorTxt = '<span>' + data + '</span>';

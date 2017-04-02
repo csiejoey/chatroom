@@ -38,7 +38,7 @@ io.sockets.on('connection', function(socket) {
 		usernames[username] = username;
 		socket.join('room1');
 		// setting profile picture and account name
-		let yahPic = '<img id="opponentPic" src="lai.jpg">';
+		let yahPic = '<img id="opponentPic" src="yah.jpg">';
 		socket.emit('setpic', yahPic);
 		let yahAccount = '雅君 (cuteyah38)';
 		socket.emit('setaccount', yahAccount);
@@ -69,6 +69,8 @@ io.sockets.on('connection', function(socket) {
 			data = '<img src="applause.gif">';
 		} else if (data.indexOf('http') > -1) {
 			data = '<a href="' + data + '">' + data + '</a>';
+		} else if (data === 'diss') {
+			data = '<img src="diss2.gif">';
 		} else if (data === '叮咚，有人在家嗎～～～～') {
 			data = '<span style="color: red; font-weight: bold">叮咚，有人在家嗎～～～～</span>';
 		} else if (data.indexOf('status') > -1) {
@@ -92,7 +94,6 @@ io.sockets.on('connection', function(socket) {
 			return;
 		}
 
-		// 字體顏色
 		io.sockets.in(socket.room).emit('updatechat', socket.username, data);
 	});
 });

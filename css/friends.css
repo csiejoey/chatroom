@@ -6,7 +6,7 @@ html body{
 	font-family: 'Hiragino Sans GB';
 }
 #main{
-	margin: 3% 18% 0;
+	margin: 3% 36% 0 0;
 	height: 640px;
 	background-color: #FCFAF2;
 	border-radius: 15px 15px 0 0;
@@ -31,7 +31,7 @@ html body{
 #topBarOptionsDiv{
 	margin-top: 2px;
 	position: absolute;
-	right: 20%;
+	right: 38%;
 }
 .topBarOptions{
 	width: 15px;
