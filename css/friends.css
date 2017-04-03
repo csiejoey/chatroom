@@ -1,14 +1,15 @@
 html body{
-	background-color: #E5E7E9;
+	background-color: #959697;
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	font-family: 'Hiragino Sans GB';
+	font-family: 'simhei';
+	letter-spacing: 0.5px;
 }
 #main{
 	margin: 3% 36% 0 0;
 	height: 640px;
-	background-color: #FCFAF2;
+	background-color: #E5E5E5;
 	border-radius: 15px 15px 0 0;
 }
 #topBar{
@@ -20,7 +21,7 @@ html body{
 	align-items: center;
 }
 .topBarIcon{
-	margin: 0 0 0% 12px;
+	margin: 1px 0 0% 12px;
 	width: 18px;
 	height: 18px;
 }
@@ -29,13 +30,13 @@ html body{
 	color: white;
 }
 #topBarOptionsDiv{
-	margin-top: 2px;
 	position: absolute;
-	right: 38%;
+	right: 39.5%;
 }
 .topBarOptions{
-	width: 15px;
-	height: 15px;
+	margin-top: 2px;
+	width: 10px;
+	height: 10px;
 	cursor: pointer;
 }
 #profile{
@@ -47,12 +48,12 @@ html body{
 	height: 90px;
 }
 #selfDescription{
-	padding: 16px 0 0 3px;
+	padding: 16px 0 0 0;
 	font-size: 15px;
 }
 #nameStatus{
 	cursor: pointer;
-	padding: 0 5px 0 5px;
+	padding: 4px 5px 10px 3px;
 }
 #nameStatus:hover{
 	box-shadow: 0 0 2px darkgrey;
@@ -80,10 +81,13 @@ html body{
 .addBg{
 	background-color: #FCFAF2;
 }
+#statusOptionsDiv{
+	margin: 0 0 0 2px;
+}
 .statusOptions{
-	margin: 10px 0 0 1px;
-	width: 25px;
-	height: 25px;
+	margin: 10px 0 0 3px;
+	width: 17px;
+	/*height: 25px;*/
 	cursor: pointer;
 }
 #searchBar{
@@ -95,9 +99,13 @@ html body{
 .search{
 	outline: 0;
 }
+::-webkit-input-placeholder {
+    color: lightgrey;
+}
 .address{
-	width: 25px;
-	height: 25px;
+	margin: 0 0 0 5px;
+	width: 17px;
+	/*height: 25px;*/
 }
 #friendlistDiv{
 	margin: 5px 0 0px 0;
@@ -112,12 +120,13 @@ html body{
 	font-size: 13px;
 }
 .category{
-	margin: 2px 0 0 0;
-	font-size: 13px;
+	/*margin: 2px 0 0 0;*/
+	font-size: 14.2px;
 	color: #939650;
 }
 .aFriend{
 	display: flex;
+	margin: 8.1px;
 }
 .friendPic{
 	margin: 1px 4px 0 9px;
@@ -126,10 +135,10 @@ html body{
 }
 .friendStatus{
 	margin: 1px 0 0 4px;
-	font-size: 10px;
+	font-size: 13.9px;
 }
 .statusWord{
-	margin-left: 19px
+	margin-left: 23.5px
 }
 .blueLink{
 	color: blue;

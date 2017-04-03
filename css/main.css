@@ -1,16 +1,16 @@
 html body{
-	background-color: #E5E7E9;
+	background-color: #959697;
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	font-family: 'Hiragino Sans GB';
-	/*cursor: default; must change all the cursors... */
+	font-family: 'simhei';
+	letter-spacing: 0.5px;
 }
 #main{
 	height: 560px;
 	margin: 5% 0 0;
 	overflow: scroll-y;
-	background-color: #FCFAF2;
+	background-color: #E5E5E5;
 	border-radius: 15px 15px 0 0;
 }
 
@@ -33,13 +33,13 @@ html body{
 	color: white;
 }
 #topBarOptionsDiv{
-	margin-top: 2px;
+	/*margin-top: 2px;*/
 	position: absolute;
 	right: 10px;
 }
 .topBarOptions{
-	width: 15px;
-	height: 15px;
+	width: 10px;
+	height: 10px;
 	cursor: pointer;
 }
 
@@ -100,7 +100,7 @@ html body{
 #opponentPic{
 	width: 90px;
 	height: 90px;
-	padding: 10px;
+	padding: 10px 0 10px 10px;
 }
 
 /*---------conversation---------------*/
