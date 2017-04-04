@@ -1,14 +1,15 @@
 html body{
-	background-color: #E5E7E9;
+	background-color: #959697;
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	font-family: 'Hiragino Sans GB';
+	font-family: 'simhei';
+	letter-spacing: 0.5px;
 }
 #main{
 	margin: 3% 36% 15% 0;
-	height: 610px;
-	background-color: #FCFAF2;
+	height: 640px;
+	background-color: #E5E5E5;
 	border-radius: 15px 15px 0 0;
 }
 #topBar{
@@ -29,13 +30,13 @@ html body{
 	color: white;
 }
 #topBarOptionsDiv{
-	margin-top: 2px;
+	/*margin-top: 2px;*/
 	position: absolute;
 	right: 38%;
 }
 .topBarOptions{
-	width: 15px;
-	height: 15px;
+	width: 10px;
+	/*height: 10px;*/
 	cursor: pointer;
 }
 #login{
@@ -48,7 +49,13 @@ html body{
 	margin: 3% 22% 3% 0;
 }
 #loginCheckbox{
-	margin: 3% 20% 0%;
+	margin: 0 0 0 55.8px;
+}
+.checkbox{
+	margin: 11px 4px 0 0;
+}
+.labelTxt{
+	margin: 0 0 0 3px;
 }
 input[type="text"]:focus{
 	outline: 0;

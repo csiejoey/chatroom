@@ -1,14 +1,15 @@
 html body{
-	background-color: #E5E7E9;
+	background-color: #959697;
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	font-family: 'Hiragino Sans GB';
+	font-family: 'simhei';
+	letter-spacing: 0.5px;
 }
 #main{
 	margin: 5% 0 0;
-	height: 515px;
-	background-color: #FCFAF2;
+	height: 430px;
+	background-color: #E5E5E5;
 	border-radius: 15px 15px 0 0;
 }
 #topBar{
@@ -29,24 +30,30 @@ html body{
 	color: white;
 }
 #topBarOptionsDiv{
-	margin-top: 2px;
+	/*margin-top: 2px;*/
 	position: absolute;
 	right: 10px;
 }
 .topBarOptions{
-	width: 15px;
-	height: 15px;
+	width: 10px;
+	height: 10px;
 	cursor: pointer;
 }
 /*#############options##############*/
 #msgOptionsDiv{
+	color: #575757;
 	display: flex;
-	height: 70px;
+	align-items: center;
+}
+#msgOptionsDiv{
+	display: flex;
+	font-size: 15px;
+	/*height: 70px;*/
 }
 #msgOptions{
 	display: flex;
-	height: 40px;
-	margin: 15px 0 0 7px;
+	/*height: 40px;*/
+	/*margin: 15px 0 0 7px;*/
 }
 .options{
 	margin: 0 0 0 15px;
@@ -56,28 +63,35 @@ html body{
 #searchBarDiv{
 	position: absolute;
 	display: flex;
-	height: 40px;
-	border: 1px #E5E7E9 solid;
-	margin: 15px 0 0 0;
+	align-items: center;
+	/*height: 40px;*/
+	background-color: white;
+	/*border: 1px #959697 solid;*/
+	/*margin: 2px 0 0 0;*/
 	right: 7%;
 }
 #searchBar{
 	width: 120px;
-	height: 100%;
+	/*height: 100%;*/
+	/*display: flex;*/
+	/*align-items: center;*/
 }
 #magnifier{
-	height: 40px;
+	margin: 5px 0 2px 5px;
+	height: 17px;
 }
 #searchBtn{
+	color: white;
+	font-size: 10px;
 	width: 40px;
-	padding: 8px;
-	background-color: #E5E7E9;
+	padding: 5px 0 5px 8px;
+	background-color: #959697;
 }
 /*###########table##############*/
 #friendmsg{
 	background-color: white;
 	margin: 0 5px 0;
-	padding: 8px 0 0 0;
+	padding: 8px 0 8px 0;
 	font-size: 15px;
 }
 .tableHead{
@@ -106,6 +120,7 @@ html body{
 	background-color: white;
 	margin: 10px 5px 0;
 	/*height: 300px;*/
+	line-height: 19px;
 }
 .prevmsg{
 	padding: 5px 0 5px 19px;
@@ -113,7 +128,7 @@ html body{
 }
 #friendYah{
 	background-color: #E5E7E9;
-	padding: 5px 0 5px 19px;
+	padding: 5px 0 15px 19px;
 }
 .yahName{
 	opacity: 0;

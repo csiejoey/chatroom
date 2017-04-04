@@ -68,14 +68,15 @@ html body{
 }
 #imageOptionsDiv{
 	display: flex;
-	padding: 7px;
+	padding: 0 0 16px 15px;
 }
 .imageOptions{
-	height: 43px;
+	height: 25px;
+    margin: 0 23px 0 0;
 }
 .statusType{
 	display: inline-block;
-	margin: 5px 3px 0 9px;
+	margin: 0 3px 0 9px;
 	width: 13px;
 	height: 13px;
 	background-color: #FFC408;
@@ -92,15 +93,18 @@ html body{
 }
 #nameStatus{
 	font-size: 14px;
+	margin: 0 0 9px 3px;
+
 }
 .blueLink{
 	color: blue;
 	cursor: pointer;
 }
 #opponentPic{
-	width: 90px;
-	height: 90px;
-	padding: 10px 0 10px 10px;
+	width: 83px;
+	padding: 5px 0 5px 0;
+	position: absolute;
+	right: 5px;
 }
 
 /*---------conversation---------------*/
@@ -116,7 +120,7 @@ html body{
 #prevChat{
 	width: 100%;
 	height: 20px;
-	padding: 2px 0 2px 5px;
+	padding: 8px 0 0 5px;
 	background-color: #E5E7E9;
 	font-size: 12px;
 }
@@ -134,25 +138,28 @@ html body{
 	padding: 0 0 0 8px;
 }
 #conversation{
-	padding: 4px 0 0 8px;
+	padding: 12px 0 0 8px;
+    line-height: 13px;
 }
 .blueName{
-	color: #005CAF;
+	/*color: #005CAF;*/
+	color: #693086;
 }
 .greyName{
-	color: #91989F;
+	color: #7F7F80;
 }
 
 /*-----------input-------------*/
 #inputOptionsDiv{
 	display: flex;
-	margin: 6px 0 3px 6px;
+	margin: 6px 0 3px 8px;
 	height: 28px;
 	cursor: pointer;
 }
 .inputOptions{
-	width: 28px;
-	height: 28px;
+	width: 22px;
+	height: 22px;
+	margin: 3px 5px 0;
 }
 #inputTxtDiv{
 	display: flex;
@@ -162,25 +169,28 @@ html body{
 #data{
 	outline: 0;
 	height: 56px;
-	width: 87%;
+	width: 100%;
 }
 #datasend{
 	width: 70px;
     border: none;
     border-radius: 0 3px 3px 0;
+    color: #575757;
+    position: absolute;
+    height: 61px;
+    right: 5px;
 }
 .hooColorTxt{
 	font-size: 18px;
-	background: -webkit-linear-gradient(#7B90D2, #5B77C7);
+	/*background: -webkit-linear-gradient(#7B90D2, #5B77C7);
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;*/
+	color: #E49C00;
 }
 .yahColorTxt{
 	font-size: 18px;
-	background: -webkit-linear-gradient(#D05A6E, #C34661);
+	/*background: -webkit-linear-gradient(#D05A6E, #C34661);
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;*/
+	color: #D1275D;
 }
-/*#dingDongRed{
-	color: red;
-}*/
