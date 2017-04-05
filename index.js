@@ -65,8 +65,10 @@ io.sockets.on('connection', function(socket) {
 			data = '<img src="bye.gif">';
 		} else if (data === ':-S') {
 			data = '<img src="worry.gif">';
-		} else if (data === '=D>') {
-			data = '<img src="applause.gif">';
+		} else if (data === ':|') {
+			data = '<img src="honest.gif">';
+		} else if (data === ':p') {
+			data = '<img src="tongue.gif">';
 		} else if (data.indexOf('http') > -1) {
 			data = '<a href="' + data + '">' + data + '</a>';
 		} else if (data === 'diss') {
