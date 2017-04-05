@@ -77,7 +77,7 @@ io.sockets.on('connection', function(socket) {
 			data = '<span style="color: red; font-weight: bold">叮咚，有人在家嗎～～～～</span>';
 		} else if (data.indexOf('status') > -1) {
 			function splitString(stringToSplit, separator) {
-				arrayOfStrings = stringToSplit.split(separator);
+				let arrayOfStrings = stringToSplit.split(separator);
 				let statusType = arrayOfStrings[1];
 				let opponentName = arrayOfStrings[2];
 				let statusWord = arrayOfStrings[3];
@@ -88,7 +88,7 @@ io.sockets.on('connection', function(socket) {
 			return;
 		} else if (data.indexOf('offlineTxt') > -1) {
 			function splitString(stringToSplit, separator) {
-				arrayOfStrings = stringToSplit.split(separator);
+				let arrayOfStrings = stringToSplit.split(separator);
 				let offlineName = arrayOfStrings[1];
 				io.sockets.in(socket.room).emit('setofflinetxt', offlineName);
 			}
