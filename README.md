@@ -1,8 +1,9 @@
 #Web Seminar In-class Hackathon - Chat Room
 
 Author: Joey Huang
-
 tribute to Yahoo-Live-Messenger
+
+<img src="./image/demo_pic.png">
 
 demo-link: https://socket-chat-example-tckckbixxs.now.sh/
 
